@@ -1,0 +1,16 @@
+/* Hero starts when it actually enters the visible preview, not at iframe load. */
+.motion-ready .hero-copy>*{animation:hero-copy-entry 1s cubic-bezier(.22,1,.36,1) both;animation-play-state:paused}
+.motion-ready .hero-copy>:nth-child(2){animation-delay:.12s}
+.motion-ready .hero-copy>:nth-child(3){animation-delay:.26s}
+.motion-ready .hero-copy>:nth-child(4){animation-delay:.4s}
+.motion-ready .hero-copy>:nth-child(5){animation-delay:.54s}
+.motion-ready .hero-media img{animation:hero-picture-entry 1.25s cubic-bezier(.22,1,.36,1) .25s both;animation-play-state:paused}
+.motion-ready .hero.is-entering .hero-copy>*,.motion-ready .hero.is-entering .hero-media img{animation-play-state:running}
+@keyframes hero-copy-entry{from{opacity:0;transform:translateY(42px)}to{opacity:1;transform:translateY(0)}}
+@keyframes hero-picture-entry{from{opacity:0;transform:translateY(28px) scale(1.06)}to{opacity:1;transform:translateY(0) scale(1)}}
+.button,.entry,.case,.login{transition:background-color .18s ease,color .18s ease,transform .2s ease,box-shadow .2s ease}.button:hover{transform:translateY(-2px)}.case:hover{transform:translateY(-4px);box-shadow:0 14px 30px #102f4310}.entry>a:hover{color:var(--navy)}nav>details[open]>.submenu{animation:menu-entry .16s ease-out both}.motion-ready .reveal{opacity:0;transform:translateY(44px);transition:opacity .85s ease var(--reveal-delay,0ms),transform .85s cubic-bezier(.22,1,.36,1) var(--reveal-delay,0ms)}.motion-ready .reveal.is-visible{opacity:1;transform:translateY(0)}@keyframes picture-entry{from{opacity:0;transform:scale(1.015)}to{opacity:1;transform:scale(1)}}@keyframes copy-entry{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@keyframes menu-entry{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.motion-ready .reveal{opacity:1;transform:none}}
+.static-preview *{animation:none!important;transition:none!important}.static-preview .reveal{opacity:1;transform:none}
+.motion-ready .reveal:focus-within{opacity:1;transform:none}
+
+@media(max-width:700px){.motion-ready .reveal{transform:translateY(32px)}.motion-ready .reveal.is-visible,.motion-ready .reveal:focus-within{transform:none}}
+@media(prefers-reduced-motion:reduce){.motion-ready .reveal{opacity:1;transform:none}} .static-preview .reveal{opacity:1;transform:none}
