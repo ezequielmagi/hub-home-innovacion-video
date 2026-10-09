@@ -11,3 +11,14 @@
 .motion-ready .hero-media video{animation:hero-picture-entry 1.25s cubic-bezier(.22,1,.36,1) .25s both;animation-play-state:paused}
 .motion-ready .hero.is-entering .hero-media video{animation-play-state:running}
 @media(prefers-reduced-motion:reduce){.video-media video{display:none}.video-control{display:none}}
+
+/* Full hero background, with contrast protection for all copy. */
+.hero-video-background{position:relative;isolation:isolate;background:#071e2d;overflow:hidden}
+.hero-video-background .hero-background{position:absolute;inset:0;z-index:-1;border:0;border-radius:0;pointer-events:none}
+.hero-background>img,.hero-background video{width:100%;height:100%;object-fit:cover;object-position:center;animation:none!important}
+.hero-background:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,22,34,.97) 0%,rgba(4,22,34,.88) 38%,rgba(4,22,34,.42) 74%,rgba(4,22,34,.25) 100%),linear-gradient(0deg,rgba(4,22,34,.94),transparent 50%)}
+.hero-video-background>.wrap{position:relative;z-index:1}
+.hero-video-background .hero-grid{grid-template-columns:1fr;min-height:490px}
+.hero-video-background .hero-copy{max-width:650px}
+.hero-video-background .journey{margin-top:32px}
+@media(max-width:640px){.hero-video-background .hero-grid{min-height:0}.hero-video-background .hero-background:after{background:linear-gradient(90deg,rgba(4,22,34,.88),rgba(4,22,34,.7)),linear-gradient(0deg,rgba(4,22,34,.9),transparent)}.hero-background>img,.hero-background video{object-position:65% center}}
